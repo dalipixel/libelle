@@ -1,4 +1,3 @@
 libelle
 =======
-
-tienda en linea.
+Version inicial de tienda en catalogo en linea.
