@@ -50,6 +50,61 @@ return array(
                     ),
                 ),
             ),
+            /***********/
+             'shop' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/shop',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Shop',
+                        'action'     => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    =>  '/[:controller[/[:action[/]]]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
+                    ),
+                ),
+            ),  
+            /***/
+                'about' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/about',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\About',
+                        'action'     => 'index',
+                    ),
+                ),
+                'may_terminate' => true,
+                'child_routes' => array(
+                    'default' => array(
+                        'type'    => 'Segment',
+                        'options' => array(
+                            'route'    =>  '/[:controller[/[:action[/]]]]',
+                            'constraints' => array(
+                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                            ),
+                            'defaults' => array(
+                            ),
+                        ),
+                    ),
+                ),
+            ),  
+            
+            
+            
         ),
     ),
     'service_manager' => array(
@@ -73,8 +128,10 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
-        ),
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Shop' => 'Application\Controller\ShopController',
+            'Application\Controller\About' => 'Application\Controller\AboutController'
+        ), 
     ),
     'view_manager' => array(
         'display_not_found_reason' => true,
