@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ZendSkeletonApplication
 =======================
 
@@ -75,3 +76,8 @@ project and you should be ready to go! It should look something like below:
             Allow from all
         </Directory>
     </VirtualHost>
+=======
+libelle
+=======
+Version inicial de tienda en catalogo en linea.
+>>>>>>> branch 'master' of https://github.com/dalipixel/libelle.git
